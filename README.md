@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-<!--
+
 **LuisLimaDev/LuisLimaDev** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started:
@@ -10,4 +10,5 @@ Here are some ideas to get you started:
 - 📫 How to reach me: luis@rastrourbano.com ...
 - 😄 Pronouns: none ...
 - ⚡ Fun fact: Sou DJ ...
+<!--
 -->
