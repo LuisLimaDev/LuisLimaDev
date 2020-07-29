@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	 <title>Testes</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="manifest" content="manifest.json">
+		<link rel="icon" type="image/x-icon" content="icone.png">
+		
+		<!--
+		<script src="FileSaver.js"></script>
+		<script src="jquery.js"></script>
+		<script src="java.js" type="text/Javascript" async></script>
+		<script src="pre.js"></script>
+		-->
+		<script src="jquery.min.js"></script>
+		<script src="padrao.js"></script>
+
+		<style>
+		
+			:root{
+				--corPadrao1: rgb(120,180, 255);
+			}
+
+			body{ 
+				margin:0px;
+				padding: 0px;
+			}
+			
+			*{
+				transition: all 0.3s ease !important;
+				font-family: sans-serif;
+			}
+			
+			#teste{
+				position: absolute;
+				min-height: 607px;
+				width: 100%;
+				background-image: url(https://i.pinimg.com/originals/a2/ba/09/a2ba09c212716ae8e5646daf93e1bda6.jpg);
+				background-position-x: var(--mouse-x-cent);
+				background-position-y: var(--mouse-y-cent);
+				background-size: 880%;
+			}
+
+			.itemQueSeguirMouse{
+				width: 50px;
+				height: 50px;
+				background: var(--corPadrao1);
+				position: absolute;
+				left: var(--mouse-x);
+				top: var(--mouse-y);
+			}
+		
+		</style>
+		
+
+		
+		
+	</head>
+
+	<body>
+	
+		<div id="tudo" class="tudo">
+		
+			<div id="teste">
+				<div class="itemQueSeguirMouse" id="infoPosition"></div>
+			</div>
+
+
+			
+		</div><!--tudo-->
+
+	
+		<script>
+		
+			tudo = new Padrao;
+			tudo.alturaMinima( tudo.getById("teste"));
+			setTimeout( function(){
+				//tudo.getById("teste").style.backgroundColor = corPadrao;
+			}, 5000 );
+		
+		</script>
+		
+		<script>
+		
+			
+		
+		</script>
+		
+	</body>
+</html>

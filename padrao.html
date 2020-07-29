@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	 <title>Padrão</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="manifest" content="manifest.json">
+		<link rel="icon" type="image/x-icon" content="icone.png">
+		
+		<!--
+		<script src="FileSaver.js"></script>
+		<script src="jquery.js"></script>
+		<script src="java.js" type="text/Javascript" async></script>
+		<script src="pre.js"></script>
+		-->
+		<script src="padrao.js"></script>
+		<script src="jquery.min.js"></script>
+		
+		<style>
+
+			:root{
+				--corPadrao1: rgb(120,180, 255);
+			}
+
+			@keyframes animCarregando{
+				0%{
+					transform: rotate(0deg)
+				}
+				100%{
+					transform: rotate(360deg)
+				}
+			}
+
+			body{
+				margin:0px;
+				padding: 0px;
+			}
+			
+			*{
+				transition: all 0.3s ease !important;
+				font-family: sans-serif;
+			}
+			
+			.pagina{ display: none }
+			
+			#centralizarAnimLoad{
+				width: 100px;
+				margin-right: auto;
+				margin-left: auto;
+				position: fixed;
+				background-color: #fff;
+			}
+
+			.circuloAnimLoad{
+				border-radius: 50%;
+				border: solid;
+				border-width: 25px;
+			}
+
+			#circuloInterno{
+				border-color: transparent;
+			}
+
+			#circuloExterno{
+				//position: absolute;
+				//left: var(--mouse-x);
+				//top: var(--mouse-y);
+				border-color: var(--corPadrao1) black;
+				animation: 3s animCarregando infinite;
+			}
+			
+			#menuBar{
+				position: fixed;
+				top: 0px;
+				background-color: #fffa;
+				color: white;
+				width: 100%;
+				line-height: 50px;
+				font-size: 22pt;
+			}
+			
+			#apresentacao .banner{
+				background-attachment: fixed;
+				background-position: 0% 50%;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			
+			#textoBanner h1, #textoBanner h2{
+				font-weight: 900;
+				font-variant-caps: small-caps;
+				margin: 10px
+			}
+
+			#textoBanner{
+				color: black;
+				mix-blend-mode: screen;
+				background: white;
+				width: 280px;
+				display: grid;
+				text-align: right;
+			}
+			
+			a.btBanner:hover{
+				color: white;
+				border-color: white;
+				background-color: black;
+			}
+
+			a.btBanner{
+				margin: 10px;
+				padding: 10px;
+				border: 3px solid black;
+				text-decoration: none;
+				color: black;
+				text-align: center;
+			}
+			
+			.conteudo{
+				padding: 10% 20%;
+				background-color: #eee;
+			}
+			
+			.cartao{
+				width: 75%;
+				margin-right: auto;
+				margin-left: auto;
+				padding: 20px;
+				margin-bottom: 20px;
+				margin-top: 20px;
+				background-color: rgba(255,255,255,0.8);
+			}
+
+		</style>
+		
+
+		
+		
+	</head>
+
+	<body>
+	
+		<div id="tudo" class="tudo">
+		
+		
+			<div id="animCarregando">
+			
+				<div id="centralizarAnimLoad">
+					<div id="circuloExterno" class="circuloAnimLoad">
+						<div id="circuloInterno" class="circuloAnimLoad"></div>
+					</div>
+				</div>
+			
+			</div>
+			
+			<div id="pagina" class="pagina">
+				<div id="apresentacao">
+			
+					<div id="banner1" class="banner" style="background-image: url('bg.jpg')">
+						<div id="textoBanner">
+							
+							<h1>bem vindo</h1>
+							<h2>Esta é minha página</h2>
+							<a href="#" class="btBanner">VEJA DESTAQUES</a>
+						</div>
+					</div>
+			
+				</div>
+				
+				<div id="primeiro" class="conteudo">
+				
+					<div class="cartao">
+					
+						<h3>Você está visualizando</h3>
+						<h1>Algum texto</h1><hr/>
+						<p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro.</p>
+						<p>Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada.</p>
+						<p>Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
+					
+					</div>
+				
+				</div>
+			
+				<div id="menuBar">
+					<div id="itensBarra">
+						<div class="btMenu">
+							<a href="#menuBlock" id="btMenuBlock">&times;</a>
+						</div>
+						<div class="itensMenuBarra" id="itensMenuBarra"></div>
+						<div id="logo"></div>
+					</div>
+					<div id="menuBlock"></div>
+				</div>
+			</div>
+
+			
+		</div><!--tudo-->
+
+		<script>
+
+			tudo = new Padrao;
+
+			//tudo.alturaMinima( tudo.getById("apresentacao"));
+			tudo.centralizarAlturaTotalPadding( tudo.getById("banner1") );
+			//tudo.centralizarAlturaTotalMargin( tudo.getById("textoBanner") );
+			tudo.centralizarLarguraTotalMargin( tudo.getById("textoBanner") );
+			//tudo.centralizarAlturaTotalMargin( tudo.getById("textoBanner") );
+			tudo.centralizarLarguraTotalPadding( tudo.getById("centralizarAnimLoad"));
+			tudo.centralizarAlturaTotalPadding( tudo.getById("centralizarAnimLoad"));
+
+			setTimeout( function(){
+				tudo.getById("centralizarAnimLoad").style.display = "none";
+				tudo.getById("pagina").style.display = "block";
+				//tudo.getById("centralizarAnimLoad").style.display = "none";
+			}, 5000 );
+
+		</script>
+
+	</body>
+</html>
